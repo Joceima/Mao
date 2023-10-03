@@ -3,20 +3,30 @@
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>PortFolio de Manita</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" type="text/css" href="style.css">
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Onest&family=Zilla+Slab:wght@300&display=swap" rel="stylesheet">
+
+    <!-- Inclure Tailwind CSS à partir du CDN -->
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.16/dist/tailwind.min.css" rel="stylesheet">
 </head>
 <body>
 
-    <!-- ... Début section HEADER ... -->
-    <section class="header" id="accueil">
-        <div class="overlay"></div>
-        <nav>
-            <a href="index.html"><img src="images/logo_chat.png" alt="Logo" class="logo"></a>
+    <section class="header relative min-h-screen bg-cover bg-center" style="background-image: url(images/fond_jaune.jpg)" id="accueil">
+        <div class="absolute inset-0 bg-black opacity-30"></div>
+        <nav class="flex items-center justify-between px-6 py-2">
+            <a href="index.html">
+                <img src="images/logo_chat.png" alt="Logo" class="w-20">
+            </a>
+            <div class="menu-btn">
+                <div class="bar"></div>
+                <div class="bar"></div>
+                <div class="bar"></div>
+            </div>
             <div class="menu-bar">
-                <ul>
+                <ul class="text-white md:flex md:space-x-4">
                     <li><a href="#accueil">Accueil</a></li>
                     <li><a href="#qui-suis-je">Qui je suis ?</a></li>
                     <li><a href="#mes-etudes">Mes études</a></li>
@@ -24,221 +34,230 @@
                     <li><a href="#arts-et-creation">Arts & Création</a></li>
                     <li><a href="#contact">Contact&Crédit</a></li>
                 </ul>
-            </div>  
-        </nav> 
-        <div class="text-box">
-            <h1>Bienvenue dans le Portfolio de Manita</h1>
-            <h2>A la recherche d’une ENTREPRISE pour une alternance en tant <br> qu’ingénieur en informatique</h2>
-            <h3>Disponible à partir de Septembre 2023</h3>
-            <p>Bonjour ! <br>
-                Etudiante en 3ème année en informatique et dans le cadre de <br>
-                première année en cycle ingénieur informatique, je suis à la recherche<br>
-                d’une alternance dans le domaine du développement web, ou en<br>
-                programmation objet C/C++ ou Python dans l’objectif d’acquérir de<br>
-                l’expérience professionnelle. <br>
-            </p>
-            <!-- Lien vers LinkedIn -->
-            <a href="https://www.linkedin.com/in/manita-mao-38112b24a/" class="hero-btn">Visiter mon LinkedIn</a>
-
-            <!-- Lien vers votre CV (remplacez 'lien_vers_cv.pdf' par le lien réel vers votre CV) -->
-            <a href="documents/CV_MAO_Manita.pdf" class="hero-btn">Télécharger mon CV</a>
-
-        </div>
+                
+            </div>
+        </nav>
     </section>
+
+    <script>
+        // Sélectionnez le bouton de menu
+        const menuBtn = document.querySelector('.menu-btn');
+    
+        // Ajoutez un gestionnaire d'événements de clic
+        menuBtn.addEventListener('click', () => {
+            // Sélectionnez le menu à afficher/cacher
+            const menu = document.querySelector('.menu-bar ul');
+    
+            // Basculez la classe "open" sur le bouton de menu
+            menuBtn.classList.toggle('open');
+    
+            // Affichez ou cachez le menu en fonction de la classe "open"
+            if (menuBtn.classList.contains('open')) {
+                menu.style.display = 'block'; // Afficher le menu
+            } else {
+                menu.style.display = 'none'; // Cacher le menu
+            }
+        });
+    </script>
+    
+    <!-- Le reste de votre contenu textuel -->
+    
+    <div class="text-box absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-white text-center w-90">
+            <h1 class="text-5xl md:text-6xl text-black-500">Bienvenue dans le Portfolio de Manita</h1>
+            <h2 class="text-xl md:text-2xl text-black-300">À la recherche d’une ENTREPRISE pour une alternance en tant qu’ingénieur en informatique</h2>
+            <h3 class="text-xl md:text-2xl text-black-300">Disponible à partir de Septembre 2023</h3>
+            <p class="text-base md:text-lg">Bonjour !</p>
+            <a href="https://www.linkedin.com/in/manita-mao-38112b24a/" class="hero-btn inline-block mt-4 md:mt-6 px-6 py-3 border border-white text-white hover:border-green-500 hover:bg-green-500 transition duration-500">Visiter mon LinkedIn</a>
+            <a href="documents/CV_MAO_Manita.pdf" class="hero-btn inline-block mt-4 md:mt-6 px-6 py-3 border border-white text-white hover:border-green-500 hover:bg-green-500 transition duration-500">Télécharger mon CV</a>
+        </div>
+    
+    
+    
+    
+    
+    
+    
+    
     <!-- ... Fin section HEADER ... -->
 
     <!-- ... Début section MOI ... -->
-    <section class="moi" id="qui-suis-je">
-        <h1>Qui je suis ? </h1>
-        <p> 
-            Je suis Manita, une étudiante en informatique âgée de 20 ans. <br>
-            Actuellement, je suis à la recherche d'une entreprise qui pourrait m'accueillir en alternance, comme vous l'aurez compris ! <br>
-            Ma passion pour l'informatique a débuté dès la terminale. Ensuite, elle s'est développée pendant les 3 années de ma licence <br>
-            en informatique à Lyon 1. <br> <br>
-            C'est à ce moment-là que j'ai décidé de postuler à 3IL, une école d'ingénieurs, pour me lancer dans une nouvelle aventure. <br>
-            J'ai choisi cette école pour me rapprocher de mon entourage à Limoges et pouvoir  effectuer une alternance en tant <br>
-            qu'ingénieur informatique. Née à Lyon, je souhaiterais passer les périodes en entreprise dans ma ville natale tout <br>
-            en restant avec ma famille proche lors des périodes en entreprise ! <br>
-            <br>
-            Vous pourrez découvrir ci-dessous mes différents projets ainsi que mon parcours académique. <br>
-            En dehors de ma vie académique, je m'investis pleinement dans le monde de l'art, que ce soit à travers <br>
-            le dessin, la photographie ou la construction dans le jeu Minecraft. <br>
-            J'aime à penser que je suis une personne gentille, sérieuse et à l'écoute des autres. N'hésitez pas à me contacter si <br>
-            vous souhaitez en savoir plus ou discuter de collaborations éventuelles ! <br>             
-        </p>
-        <img src="images/manita.png" >
+    <section class="moi py-20 bg-gray-100" id="qui-suis-je">
+        <div class="container mx-auto flex flex-col md:flex-row items-center md:justify-between">
+            <div class="text-center md:text-left md:w-1/2">
+                <h1 class="text-3xl md:text-4xl font-semibold mb-4">Qui je suis ?</h1>
+                <p class="text-base md:text-lg text-gray-700 leading-relaxed mb-6">
+                    Je suis Manita, une étudiante en informatique âgée de 20 ans. Actuellement, je suis à la recherche d'une entreprise qui pourrait m'accueillir en alternance, comme vous l'aurez compris !
+                    Ma passion pour l'informatique a débuté dès la terminale. Ensuite, elle s'est développée pendant les 3 années de ma licence en informatique à Lyon 1.
+                    C'est à ce moment-là que j'ai décidé de postuler à 3IL, une école d'ingénieurs, pour me lancer dans une nouvelle aventure. J'ai choisi cette école pour me rapprocher de mon entourage à Limoges et pouvoir effectuer une alternance en tant qu'ingénieur informatique. Née à Lyon, je souhaiterais passer les périodes en entreprise dans ma ville natale tout en restant avec ma famille proche lors des périodes en entreprise !
+                    Vous pourrez découvrir ci-dessous mes différents projets ainsi que mon parcours académique.
+                    En dehors de ma vie académique, je m'investis pleinement dans le monde de l'art, que ce soit à travers le dessin, la photographie ou la construction dans le jeu Minecraft.
+                    J'aime à penser que je suis une personne gentille, sérieuse et à l'écoute des autres. N'hésitez pas à me contacter si vous souhaitez en savoir plus ou discuter de collaborations éventuelles !
+                </p>
+            </div>
+            <img src="images/manita.png" alt="Manita" class="max-w-full md:max-w-md rounded-full shadow-md mx-auto md:mx-0">
+        </div>
     </section>
-    <!-- ... Début section MOI ... -->
+    
+    <!-- ... fin section MOI ... -->
 
     <!-- ... Début section INFORMATIQUE ... -->
-    <section class="Informatique"  id="mes-etudes">
-        <h1>Mes études en informatique</h1>
-        <p> 
-            Ayant passé 3 années à la fac et validé ma L2 informatique, <br>
-            j'ai décidé de postuler chez 3IL ingénieurs à Limoges. <br>
-            Vous découvrirez ci-dessous les compétences que j'ai acquises <br>
-             et celles que je prévois d'acquérir prochainement. <br>
-        </p>
-        <div class="row">
-            <div class="etude-col">
-                <h3>Cycle ingénieur informatique FA</h3>
-                <h4>3IL ingénieurs, Limoges</h4>
-                <p> 
-                    Diplôme visé:Ingénieur Informatique <br><br>
-                    Statut :Apprenti <br><br>
-                    Durée : 3 ans <br><br>
-                    Compétences visées en 1ère année : <br>
-                    JAVA, Système d'exploitation, Sciences, <br>
-                    Sciences humaines et bien d'autres ! <br>
-                </p>
-            </div>
-            <div class="etude-col">
-                <h3>L2 informatique</h3>
-                <h4>Université Claude Bernard Lyon 1</h4>
-                <p>
-                    Statut : Année Validée, mais année non diplômante <br><br>
-                    Langages : C/C++, Python, PHP/HTML/CSS, <br>
-                    Prolog, Ocaml <br><br>
-                    Bases de données, SQL : MariaDB, PostGreSQL <br><br>
-                    Environnement : Linux <br><br>
-                    Gestion de code : GitLab <br><br>
-                    Mathématiques : <br>
-                    Statistiques pour l'informatique <br>
-                    Analyse matricielle et algèbre linéaire appliquée A <br>
-                </p>
-            </div>
-            <div class="etude-col">
-                <h3>L1 mathématiques et informatique</h3>
-                <h4>Université Claude Bernard Lyon 1</h4> 
-                <p> 
-                    Statut : Année Validée, mais année non diplômante <br><br>
-                    Langages : C/C++, PHP/HTML/CSS, Scheme <br><br>
-                    Mathématiques : Fondamentaux des mathématiques I & II <br><br>
-                    Environnement : Linux <br><br>
-                </p>
+    <section class="Informatique py-20" id="mes-etudes">
+        <div class="container mx-auto text-center">
+            <h1 class="text-3xl font-semibold mb-8">Mes études en informatique</h1>
+            <p class="text-base text-gray-700 leading-relaxed mb-12">
+                Ayant passé 3 années à la fac et validé ma L2 informatique, j'ai décidé de postuler chez 3IL ingénieurs à Limoges. Vous découvrirez ci-dessous les compétences que j'ai acquises et celles que je prévois d'acquérir prochainement.
+            </p>
+            <div class="flex flex-wrap justify-center gap-6">
+                <div class="etude-col bg-pink-100 p-6 rounded-lg shadow-md w-full sm:w-1/2 md:w-1/3">
+                    <h3 class="text-xl font-semibold mb-2">Cycle ingénieur informatique FA</h3>
+                    <h4 class="text-lg mb-4">3IL ingénieurs, Limoges</h4>
+                    <p class="text-sm text-gray-700">
+                        Diplôme visé: Ingénieur Informatique<br><br>
+                        Statut: Apprenti<br><br>
+                        Durée: 3 ans<br><br>
+                        Compétences visées en 1ère année :<br>
+                        JAVA, Système d'exploitation, Sciences, Sciences humaines et bien d'autres !
+                    </p>
+                </div>
+                <div class="etude-col bg-blue-100 p-6 rounded-lg shadow-md w-full sm:w-1/2 md:w-1/3">
+                    <h3 class="text-xl font-semibold mb-2">L2 informatique</h3>
+                    <h4 class="text-lg mb-4">Université Claude Bernard Lyon 1</h4>
+                    <p class="text-sm text-gray-700">
+                        Statut: Année Validée, mais année non diplômante<br><br>
+                        Langages: C/C++, Python, PHP/HTML/CSS, Prolog, Ocaml<br><br>
+                        Bases de données, SQL: MariaDB, PostGreSQL<br><br>
+                        Environnement: Linux<br><br>
+                        Gestion de code: GitLab<br><br>
+                        Mathématiques:
+                        Statistiques pour l'informatique<br>
+                        Analyse matricielle et algèbre linéaire appliquée A
+                    </p>
+                </div>
+                <div class="etude-col bg-green-100 p-6 rounded-lg shadow-md w-full sm:w-1/2 md:w-1/3">
+                    <h3 class="text-xl font-semibold mb-2">L1 mathématiques et informatique</h3>
+                    <h4 class="text-lg mb-4">Université Claude Bernard Lyon 1</h4>
+                    <p class="text-sm text-gray-700">
+                        Statut: Année Validée, mais année non diplômante<br><br>
+                        Langages: C/C++, PHP/HTML/CSS, Scheme<br><br>
+                        Mathématiques: Fondamentaux des mathématiques I & II<br><br>
+                        Environnement: Linux
+                    </p>
+                </div>
             </div>
         </div>
     </section>
+    
      <!-- ... FIN section INFORMATIQUE ... -->
 
      <!-- ... DEBUT section PROJET ... -->
-    <section class="projet" id="mes-projets-academiques">
-        <h1>Mes projets académiques & personnels</h1>
-        <p>Jetez un oeil à mes projets ;)</p>
-        <div class="row">
-            <div class="proj">
-                <h3>Projet simulation d'une fourmilière</h3>
-                <img src="images/fourmi.png" class="projet-image">
-                <h3>Capture d'écran de notre simulation d'une fourmilière</h3>
-                <p> 
-                    Dans le cadre d'un projet académique pour l'UE conception d'application. <br>
-                    Mon binôme Nessim Mechiche et moi avions travaillé sur le projet <br>
-                    de simuler le comportement d'une colonie de fourmis. <br>
-                    Vous trouverez le lien de notre projet ci-dessous. <br>
-                </p>
-                <a href="https://forge.univ-lyon1.fr/p2001434/ants_invasion">Lien vers le projet</a>
+     <section class="projet py-20" id="mes-projets-academiques">
+        <div class="container mx-auto text-center">
+            <h1 class="text-3xl font-semibold mb-8">Mes projets académiques & personnels</h1>
+            <p class="text-base text-gray-700 mb-12">Jetez un œil à mes projets ;)</p>
+            <div class="flex flex-wrap gap-6 justify-center">
+                <div class="proj bg-gray-100 p-6 rounded-lg shadow-md w-full sm:w-1/2 md:w-1/3">
+                    <h3 class="text-xl font-semibold mb-2">Projet simulation d'une fourmilière</h3>
+                    <img src="images/fourmi.png" alt="Capture d'écran de la simulation d'une fourmilière" class="proj-image rounded-md mx-auto my-4">
+                    <p class="text-sm text-gray-700">
+                        Dans le cadre d'un projet académique pour l'UE conception d'application. Mon binôme Nessim Mechiche et moi avions travaillé sur le projet de simuler le comportement d'une colonie de fourmis.
+                    </p>
+                    <a href="https://forge.univ-lyon1.fr/p2001434/ants_invasion" class="text-blue-500 hover:underline block mt-4">Lien vers le projet</a>
+                </div>
+                <div class="proj bg-gray-100 p-6 rounded-lg shadow-md w-full sm:w-1/2 md:w-1/3">
+                    <h3 class="text-xl font-semibold mb-2">Projet Web gestion de bases de données</h3>
+                    <img src="images/capylogo.png" alt="Logo du projet web gestion de bases de données" class="proj-image rounded-md mx-auto my-4">
+                    <p class="text-sm text-gray-700">
+                        Dans le cadre d'un projet académique pour l'UE bases de données, nous avions pour thème la gestion des fédérations et écoles de danses françaises. Ma binôme Ersa Colmek et moi avions développé un site web permettant cette gestion en utilisant MariaDB.
+                    </p>
+                </div>
+                <div class="proj bg-gray-100 p-6 rounded-lg shadow-md w-full sm:w-1/2 md:w-1/3">
+                    <h3 class="text-xl font-semibold mb-2">Autres projets</h3>
+                    <p class="text-sm text-gray-700">
+                        En première année en L1 mathématiques et informatique. Dans le cadre d'une UE, j'ai pu codé une cube 3D en rotation et des collisions statistiques. Pour comprendre ces deux concepts, j'ai regardé les vidéos javidx9 sur Youtube.
+                        <a href="https://www.youtube.com/@javidx9" class="text-blue-500 hover:underline block mt-4">Lien vers javidx9</a>
+                    </p>
+                    <h3 class="text-xl font-semibold mb-2 mt-4">Projet personnel</h3>
+                    <p class="text-sm text-gray-700">
+                        Apprentissage autodidacte du JavaScript. Actuellement niveau intermédiaire.
+                        <a href="https://youtu.be/8dWL3wF_OMw?si=U2OesYkCOl0ImJYv&t=15832" class="text-blue-500 hover:underline block mt-2">Voici le cours de JavaScript que j'étudie...</a>
+                    </p>
+                </div>
             </div>
-            <div class="proj">
-                <h3>Projet Web gestion de bases de données</h3>
-                <img src="images/capylogo.png" class="projet-image">
-                <h3>Logo fait par moi pour le projet web gestion de bases de données</h3>
-                <p>
-                    Dans le cadre d'un projet académique pour l'UE bases de données, <br>
-                    nous avions pour thème la gestion des fédérations et écoles de danses françaises. <br>
-                    Ma binôme Ersa Colmek et moi avions développé un site web permettant cette gestion en utilisant MariaDB. <br>   
-                </p>
-            </div>
-            <div class="proj">
-                <h3>Autres projets</h3>
-                <p> 
-                    En première année en L1 mathématiques et informatique. <br>
-                    Dans le cadre d'une UE. J'ai pu côdé une cube 3D en rotation <br>
-                    et des collisions statistiques. Pour comprendre ces deux concepts <br>
-                    j'ai regardé les vidéos javidx9 sur Youtube. Lien ci-dessous. <br>
-                    <br>
-                    <a href="https://www.youtube.com/@javidx9">Lien vers ljavidx9</a>
-                    <br>
-                    <h3>Projet personnel</h3>
-                    <p> Apprentissage autodidacte du JavaScript. Actuellement niveau intermédiaire. </p>
-                    <a href="https://youtu.be/8dWL3wF_OMw?si=U2OesYkCOl0ImJYv&t=15832">Voici le cours de JavaScript que j'étudie...</a>  
-                 </p>
-            </div>
-            
         </div>
     </section>
+    
     <!-- ... FIN section PROJET ... -->
 
-    <!-- ... DEBUT section ART ... -->
-    <section class="arts" id="arts-et-creation">
-    <h1>Arts et création</h1>
-    <p> Dessins, photographies et construction Minecraft !</p>
-    <div class = "row">
-        <div class = "art">
-            <h3>Voici quelques de mes dessins et fanarts</h3>
-            <img src="images/chat_cool_carre.png" class="dessin-image">
-            <img src="images/mouse.jpeg" class="dessin-image">
-            <img src="images/smurf_cat_t_shirt.png" class="dessin-image">
-            <img src="images/logo_chat.png" class="dessin-image">
-            <br>
-            <a href="https://www.instagram.com/joceima.png/">Pour voir plus de mes dessins...</a>
-            <br>
-            <p class="photo-credit">© Toutes les dessins sont la propriété de Manita MAO. Veuillez demander l'autorisation avant de les utiliser.</p>
+    <section class="arts py-20" id="arts-et-creation">
+        <div class="container mx-auto text-center">
+            <h1 class="text-3xl font-semibold">Arts et création</h1>
+            <p class="text-base text-gray-700 mb-12">Dessins, photographies et construction Minecraft !</p>
+            <div class="row">
+                <div class="art bg-gray-100 p-6 rounded-lg shadow-md w-full sm:w-1/2 md:w-1/3">
+                    <h3 class="text-xl font-semibold mb-2">Voici quelques-uns de mes dessins et fanarts</h3>
+                    <img src="images/chat_cool_carre.png" alt="Dessin de chat" class="dessin-image rounded-md mx-auto my-4">
+                    <img src="images/mouse.jpeg" alt="Dessin de souris" class="dessin-image rounded-md mx-auto my-4">
+                    <img src="images/smurf_cat_t_shirt.png" alt="Dessin de schtroumpf chat" class="dessin-image rounded-md mx-auto my-4">
+                    <img src="images/logo_chat.png" alt="Logo de chat" class="dessin-image rounded-md mx-auto my-4">
+                    <a href="https://www.instagram.com/joceima.png/" class="text-blue-500 hover:underline block mt-4">Pour voir plus de mes dessins...</a>
+                    <p class="photo-credit text-xs mt-2">© Tous les dessins sont la propriété de Manita MAO. Veuillez demander l'autorisation avant de les utiliser.</p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="photo bg-gray-100 p-6 rounded-lg shadow-md w-full sm:w-1/2 md:w-1/3">
+                    <h3 class="text-xl font-semibold mb-2">Voici quelques-unes de mes photographies</h3>
+                    <img src="images/bu_lyon1.jpeg" alt="Photographie d'un bâtiment" class="photo-image rounded-md mx-auto my-4">
+                    <img src="images/fleur.jpeg" alt="Photographie d'une fleur" class="photo-image rounded-md mx-auto my-4">
+                    <img src="images/papillon.jpeg" alt="Photographie d'un papillon" class="photo-image rounded-md mx-auto my-4">
+                    <img src="images/rome.jpeg" alt="Photographie de Rome" class="photo-image rounded-md mx-auto my-4">
+                    <img src="images/papillon_2.jpeg" alt="Photographie d'un papillon" class="photo-image rounded-md mx-auto my-4">
+                    <p class="photo-credit text-xs mt-2">© Toutes les photos sont la propriété de Manita MAO. Veuillez demander l'autorisation avant de les utiliser.</p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="minecraft bg-gray-100 p-6 rounded-lg shadow-md w-full sm:w-1/2 md:w-1/3">
+                    <h3 class="text-xl font-semibold mb-2">Voici l'un de mes projets Minecraft dont je suis le plus fier</h3>
+                    <p class="text-sm text-gray-700">Cette idée est parvenue en regardant l'une des vidéos du Youtuber Folli</p>
+                    <p class="text-sm text-gray-700">Projet réalisé en équipe</p>
+                    <img src="images/minecraft_1.jpeg" alt="Capture d'écran de Minecraft" class="minecraft-image rounded-md mx-auto my-4">
+                    <img src="images/minecraft_2.jpeg" alt="Capture d'écran de Minecraft" class="minecraft-image rounded-md mx-auto my-4">
+                    <img src="images/minecraft_3.jpeg" alt="Capture d'écran de Minecraft" class="minecraft-image rounded-md mx-auto my-4">
+                    <img src="images/minecraft_4.jpeg" alt="Capture d'écran de Minecraft" class="minecraft-image rounded-md mx-auto my-4">
+                    <img src="images/minecraft_5.jpeg" alt="Capture d'écran de Minecraft" class="minecraft-image rounded-md mx-auto my-4">
+                    <img src="images/minecraft_6.jpeg" alt="Capture d'écran de Minecraft" class="minecraft-image rounded-md mx-auto my-4">
+                    <img src="images/minecraft_7.jpeg" alt="Capture d'écran de Minecraft" class="minecraft-image rounded-md mx-auto my-4">
+                    <img src="images/minecraft_8.jpeg" alt="Capture d'écran de Minecraft" class="minecraft-image rounded-md mx-auto my-4">
+                    <a href="https://youtu.be/DOLAxQuLTKU?si=wHsPKOZQO08-yUI8" class="text-blue-500 hover:underline block mt-4">Youtuber Folli</a>
+                    <p class="photo-credit text-xs mt-2">© Toutes les photos sont la propriété de Manita MAO. Veuillez demander l'autorisation avant de les utiliser.</p>
+                </div>
+            </div>
         </div>
-    </div>
-    <div class = "row">
-        <div class = "photo">
-            <h3>Voici quelques de mes photographies</h3>
-            <img src="images/bu_lyon1.jpeg" class="photo-image">
-            <img src="images/fleur.jpeg" class="photo-image">
-            <img src="images/papillon.jpeg" class="photo-image">
-            <img src="images/rome.jpeg" class="photo-image">
-            <img src="images/papillon_2.jpeg" class="photo-image">
-            <br>
-            <p class="photo-credit">© Toutes les photos sont la propriété de Manita MAO. Veuillez demander l'autorisation avant de les utiliser.</p>
-        </div>
-    </div>
-    <div class="row">
-        <div class = "minecraft">
-            <h3>Voici l'un de mes projets Minecraft dont lequel je suis la plus fière</h3>
-            <p> Cette idée est parvenu en regardant l'une des vidéos du Youtuber Folli</p>
-            <p>Projet réalisé en équipe</p>
-            <img src="images/minecraft_1.jpeg" class="minecraft-image">
-            <img src="images/minecraft_2.jpeg" class="minecraft-image">
-            <img src="images/minecraft_3.jpeg" class="minecraft-image">
-            <img src="images/minecraft_4.jpeg" class="minecraft-image">
-            <img src="images/minecraft_5.jpeg" class="minecraft-image">
-            <img src="images/minecraft_6.jpeg" class="minecraft-image">
-            <img src="images/minecraft_7.jpeg" class="minecraft-image">
-            <img src="images/minecraft_8.jpeg" class="minecraft-image">
-            <br>
-            <a href="https://youtu.be/DOLAxQuLTKU?si=wHsPKOZQO08-yUI8">Youtuber Folli </a>
-            <p class="photo-credit">© Toutes les photos sont la propriété de Manita MAO. Veuillez demander l'autorisation avant de les utiliser.</p>
-        </div> 
-    </div>
     </section>
+    
+    
     <!-- ... FIN section ART ... -->
 
     <!-- ... DEBUT section CONTACT ... -->
-    <section class="contacts" id="contact">
-        <h3> Contact & Crédit </h3>
-        <div class="cc">
-            <div class="Linkedin">
-                <p> Voici mon Linkedin</p>
-                <a href="https://www.linkedin.com/in/manita-mao-38112b24a/"> Manita MAO </a>
-                <p> Voici mon mail</p>
-                <a href="maoamanita@gmail.com"> mail Manita MAO </a>
-            </div>
-            <br>
-            <div class="Credit">
-                <p> 
-                    Pour la création de ce port-folio, pour la structure du code <br>
-                    je me suis basée sur une vidéo Youtube de GreatStack. <br>
-                    Lien ci-dessous. <br>
-                </p>
-                <a href="https://youtu.be/oYRda7UtuhA?si=Xaie5oe_E5KXG1Gh"> Lien de la vidéo </a>
+    <section class="contacts bg-pink-200 text-white py-8 sm:py-20" id="contact">
+        <div class="container mx-auto text-center">
+            <h3 class="text-xl font-semibold mb-4 sm:mb-8">Contact & Crédit</h3>
+            <div class="cc flex flex-wrap justify-center">
+                <div class="LinkedIn w-full sm:w-1/2 bg-pink-400 p-4 sm:p-6 rounded-lg shadow-md mb-4 sm:mb-0">
+                    <p class="text-base mb-2">Voici mon Linkedin</p>
+                    <a href="https://www.linkedin.com/in/manita-mao-38112b24a/" class="text-white hover:bg-pink-600 block mb-4">Manita MAO</a>
+                    <p class="text-base mb-2">Voici mon mail</p>
+                    <a href="mailto:maoamanita@gmail.com" class="text-white hover:bg-pink-600 block">Mail Manita MAO</a>
+                </div>
+                <div class="Credit w-full sm:w-1/2 bg-green-300 p-4 sm:p-6 rounded-lg shadow-md mt-4 sm:mt-0">
+                    <p class="text-base mb-2">Pour la création de ce port-folio, pour la structure du code</p>
+                    <p class="text-base mb-4">je me suis basée sur une vidéo Youtube de GreatStack.</p>
+                    <a href="https://youtu.be/oYRda7UtuhA?si=Xaie5oe_E5KXG1Gh" class="text-white hover:bg-green-500 block">Lien de la vidéo</a>
+                </div>
             </div>
         </div>
     </section>
+    
+    
     <!-- ... FIN section CONTACT ... -->
 </body>
 </html>
