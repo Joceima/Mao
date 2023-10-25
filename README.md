@@ -1,5 +1,2 @@
 # Manita
-
-Voici le code mon portfolio !
-
-(écrire la suite)
+Bonjour voici mon portfolio, cliquer sur ce lien pour le visualiser : https://joceima.github.io/Mao/
